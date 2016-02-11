@@ -1,0 +1,10 @@
+Django==1.9.2
+django-appconf==1.0.1
+django-bootstrap3==6.2.2
+django-imagekit==3.3
+django-jquery==1.9.1
+django-markdown==0.8.4
+Markdown==2.6.5
+pilkit==1.1.13
+Pillow==3.1.1
+six==1.10.0
