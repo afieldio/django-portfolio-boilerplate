@@ -21,5 +21,5 @@ from portfolio.views import home
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('^markdown/', include( 'django_markdown.urls')),
-    url(r'^home/', 'portfolio.views.home', name='home')
+    url(r'^$', 'portfolio.views.home', name='home')
 ]
