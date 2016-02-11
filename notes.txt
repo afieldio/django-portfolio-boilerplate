@@ -1,0 +1,18 @@
+Basic set up for Django Portfolio
+
+Included the following:
+
+- JQuery 
+https://pypi.python.org/pypi/django-jquery/1.7.2
+
+- Bootstrap3
+http://django-bootstrap3.readthedocs.org/en/latest/index.html
+
+- Image Kit
+This needs Pillow and ImageKit, allows for image manipulation
+https://pillow.readthedocs.org/en/3.0.0/installation.html
+https://django-imagekit.readthedocs.org/en/latest/
+
+- Markdown
+Converts a Text Field into one that can handle Markdown.
+https://pypi.python.org/pypi/django-markdown
