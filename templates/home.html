@@ -5,8 +5,214 @@
 {% endblock %}
 
 {% block content %}
-  <h1>Home</h1>
+<div class="header" id="header">
+  <svg viewBox="0 0 800 600" class="svg-view">
+    <symbol id="s-text">
+      <text text-anchor="middle"
+            x="50%"
+            y="35%"
+            class="text--line"
+            >
+        Adam
+      </text>
+      <text text-anchor="middle"
+            x="50%"
+            y="75%"
+            class="text--line2"
+            >
+        Field
+      </text>
+    </symbol>
+    <g class="g-ants">
+      <use xlink:href="#s-text"
+        class="text-copy"></use>     
+      <use xlink:href="#s-text"
+        class="text-copy"></use>     
+      <use xlink:href="#s-text"
+        class="text-copy"></use>     
+      <use xlink:href="#s-text"
+        class="text-copy"></use>     
+      <use xlink:href="#s-text"
+        class="text-copy"></use>     
+    </g>
+  </svg>
+</div>
+
+<div class="section-1">
+  <div class="container">
+    <h2><span class="header-span"></span>Who am I?<span class="header-span"></span></h2>
+    <div class="col-md-6">
+      <img class="img-responsive img-circle profile-img" src="{% static 'portfolio/img/adam_profile.jpg'%}">
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+      <h3>Manager, Developer, Pilot</h3>
+      <p>I am currently a Project Manager at <a href="p.ota.to">Potato</a>. I used to fly planes for a living but retrained as a Web Developer. Whilst my current day-to-day does not involve coding I still make time to learning what the World Wide Web has to offer.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-2">
+  <div class="container">
+    <h2><span class="header-span"></span>What do I do?<span class="header-span"></span></h2>
+    <div class="col-md-4 section-block">
+        <img class="center-block" src="{% static 'portfolio/img/design.jpg' %}">
+        <h3>Design</h3>
+        <p>I can help bring your idea to life. From having detailed discussions we can create a solution that is bespoke to your needs.</p>
+    </div>
+    <div class="col-md-4 section-block">
+      
+      <img class="center-block" src="{% static 'portfolio/img/screw_driver.jpg' %}">
+      <h3>Develop</h3>
+      <p>I am comfortable with the fundamentals (HTML, CSS, JS) and always looking at expanding my skill set (Python and Django) </p>
+      
+    </div>
+    <div class="col-md-4 section-block">
+      
+      <img class="center-block" src="{% static 'portfolio/img/deploy.jpg' %}">
+      <h3>Deploy</h3>
+      <p>I can help with hosting your website, setting up a dedicated email address, and provide you with ongoing support.</p>
+      
+    </div>
+  </div>
+</div>
+
+<div class="section-1">
+  <div class="container">
+    <h2><span class="header-span"></span>What drives me?<span class="header-span"></span></h2>
+    <div class="col-md-4">
+      <div class="drive-card">
+        <h3>Challenge</h3>
+        <p>I love a good challenge and believe everyone needs a little stress to achieve the best they can.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="drive-card">
+      <h3>Learn</h3>
+      <p>My aim in life is to be a polymath! Web development certainly quenches my thurst for knowledge.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="drive-card">
+      <h3>Build</h3>
+      <p>Houses, aquaponic systems or websites, I love to get my hands dirty. The creation process is a lot of fun.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-3" id="contact">
+  <div class="container contact-container">
+    <h2><span class="header-span"></span>Contact Me<span class="header-span"></span></h2>
+    <div class="col-md-6">
+      <h3 class="contact-h3">Fill in the form</h3>
+
+
+      <form method="post">
+      {% csrf_token %}
+      
+      <div class="form-group">
+        <div>
+          <label for="{{form.name_id}}">Name <p class="required">*</p></label>
+          <span class="error-span pull-right">{{form.name.errors}}</span>
+        </div>
+        
+        <input type="{{form.name_id}}" name="name" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="{{form.phone_id}}">Phone </label>
+        <input type="{{form.phone_id}}" name="phone" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="{{form.email_id}}">Email <p class="required">*</p></label>
+          <span class="error-span pull-right">{{form.email.errors}}</span>
+        </div>
+        
+        <input type="{{form.email_id}}" name="email" class="form-control">
+      </div>
+
+        <div class="form-group">
+          <div>
+            <label for="{{form.description_id}}">Description <p class="required">*</p></label>
+            <span class="error-span pull-right">{{form.description.errors}}</span>
+          </div>
+          <textarea type="{{form.description_id}}" name="description" class="form-control" rows="5"></textarea>
+        </div>
+      
+      <button class="btn btn-default" type="submit" value="Send">Send</button>
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      <h3 class="contact-h3">Find more here</h3>
+      <div class="contact-info">
+        <p class="phone">Phone: <phone>+44 (0) 7590 472355</phone></p>
+        <a href="{% url 'download' %}"><p class="fa fa-download fa-2x download-icon"></p>Download my CV</a>
+        <div id="map"></div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
 {% endblock %}
 
 {% block endscript %}
+    {% if form.errors %}
+      <script type="text/javascript">
+          var valid = {{form.is_valid|lower}};
+          console.log(valid);
+          if(valid == false){
+              var section = document.getElementById("contact");
+              section.scrollIntoView();
+          }
+      </script>
+    {% endif %}
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    <script type="text/javascript">
+      function initMap() {
+
+        var map;
+
+        var myLatLng = {lat: 51.54732, lng: -0.11074};
+
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: myLatLng,
+          scrollwheel: false,
+          zoom: 15
+        });
+
+        marker = new google.maps.Marker({
+          map: map,
+          draggable: false,
+          animation: google.maps.Animation.DROP,
+          position: myLatLng,
+          title: "I'm here!"
+
+        });
+        marker.addListener('click', toggleBounce);
+      }
+
+      function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+      }
+
+      window.onload=initMap();
+    </script>
+
+
+
+
+
+
 {% endblock %}
