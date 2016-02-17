@@ -3,6 +3,7 @@ from django.views.static import serve
 from django.template import Context
 from django.template.loader import get_template
 from django.shortcuts import redirect
+from django.http import HttpResponse
 
 from portfolio.forms import ContactForm
 
@@ -52,4 +53,10 @@ def home(request):
 
 def download(request):
     filepath = '/Users/adamf/Development/afieldio/afieldio/portfolio/static/portfolio/afield_cv.pdf'
-    return serve(request, os.path.basename(filepath), os.path.dirname(filepath))
+    response = HttpResponse()
+    
+    response['X-Sendfile'] = filepath
+    response['Content-Type'] = ''
+    return response
+
+    # return serve(request, os.path.basename(filepath), os.path.dirname(filepath))
