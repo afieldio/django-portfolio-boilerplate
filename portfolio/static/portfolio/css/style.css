@@ -41,16 +41,19 @@ h3{
 	margin: 0px 20px;
 }
 
+#map{
+	width: 80%;
+	height: 280px;
+	margin: 0px auto;
+}
+
 @media only screen and (max-width : 320px){
-    span{
-    	visibility: hidden;
-    }
-    h2{
-    	font-size: 1.7em;
-    }  
+    
+    
 
     h3{
     	font-size: 1.4em;
+    	padding:60px 10px;
     } 
     }
 
@@ -58,6 +61,21 @@ h3{
     .section-block p{
     	width: 75%;
     }
+    .header-span{
+    	display:none;
+    }
+    h3{
+    	font-size: 1.4em;
+    	padding:40px 10px 10px 10px;
+    } 
+
+    h2{
+    	font-size: 1.7em;
+    } 
+
+    #map{
+    	width: 100%
+    } 
     }
 
 
@@ -103,7 +121,7 @@ h3{
 }
 
 .profile-img{
-	width: 340px;
+	width: 360px;
 	margin: 0px auto 80px auto;
 	display: block;
 }
@@ -134,13 +152,14 @@ h3{
 
 @media only screen and (max-width : 768px){
     .drive-card {
-    	width: 75%;
+    	width: 100%;
     }
 
     .drive-card p{
-    	width: 75%;
+    	width: 95%;
     	margin: 0px auto;
     }
+
     }
 
 
@@ -212,11 +231,7 @@ form{
 	font-family: 'Oxygen', sans-serif;
 }
 
-#map{
-	width: 75%;
-	height: 300px;
-	margin: 0px auto;
-}
+
 
 button{
 	width: 20%;

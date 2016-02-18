@@ -15,14 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.conf.urls.static import static
-
-
-from portfolio.views import home
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url('^markdown/', include( 'django_markdown.urls')),
+    url('^markdown/', include('django_markdown.urls')),
     url(r'^$', 'portfolio.views.home', name='home'),
-    url(r'^download/$', 'portfolio.views.download', name='download'),
 ]

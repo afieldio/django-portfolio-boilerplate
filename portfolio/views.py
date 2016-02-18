@@ -49,14 +49,3 @@ def home(request):
 
     context = RequestContext(request, {'form': form, })
     return render_to_response('home.html', context_instance=context)
-
-
-def download(request):
-    filepath = '/Users/adamf/Development/afieldio/afieldio/portfolio/static/portfolio/afield_cv.pdf'
-    response = HttpResponse()
-    
-    response['X-Sendfile'] = filepath
-    response['Content-Type'] = ''
-    return response
-
-    # return serve(request, os.path.basename(filepath), os.path.dirname(filepath))
