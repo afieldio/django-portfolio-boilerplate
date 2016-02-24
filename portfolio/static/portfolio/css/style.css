@@ -1,3 +1,12 @@
+@font-face{ 
+	font-family: 'Plexifont';
+	src: url('web\ fonts/plexifontbv_regular_macroman/plexifont-webfont.eot');
+	src: url('web\ fonts/plexifontbv_regular_macroman/plexifont-webfont.eot?iefix') format('eot'),
+	     url('web\ fonts/plexifontbv_regular_macroman/plexifont-webfont.woff') format('woff'),
+	     url('web\ fonts/plexifontbv_regular_macroman/plexifont-webfont.ttf') format('truetype'),
+	     url('web\ fonts/plexifontbv_regular_macroman/plexifont-webfont.svg#webfont') format('svg');
+}
+
 body{
 	color:;
 }
@@ -82,11 +91,32 @@ h3{
 
 .header{
 	background: #5A5279;
-	background-size: .12em 100%;
-	font: 16em/1 'Roboto';
+	/*background-size: .12em 100%;*/
+	/*font: 16em/1 'Roboto';*/
 	height: 100vh;
 	box-shadow: 10px 10px black;
+	
 }
+
+.header p{
+	font-family: 'Plexifont';
+	text-align: center;
+	color: #FEFDD9;
+	vertical-align: middle;
+	padding-top: 30vh
+}
+
+.header p.first{
+	font-size: 15em;
+}
+
+@media only screen and (max-width : 768px){
+  
+	.header p.first{
+		font-size: 8em;
+	}
+    }
+
 
 .section-1{
 	background-color: #4E5C75;
@@ -217,7 +247,7 @@ svg {
 .text-copy {
   fill: none;
   padding-bottom: 20px;
-  stroke: #D2D29D;
+  stroke: #FEF1D9;
   stroke-dasharray: 0 100%;
   stroke-width: 2px;
   webkit-animation: dash 4s linear forwards;
