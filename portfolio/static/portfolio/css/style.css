@@ -81,19 +81,51 @@ h3{
 
 
 .header{
-	background: #082330;
+	background: #5A5279;
 	background-size: .12em 100%;
-	font: 16em/1 'Roboto Slab';
+	font: 16em/1 'Roboto';
 	height: 100vh;
 	box-shadow: 10px 10px black;
 }
 
 .section-1{
-	background-color: #ededed;
+	background-color: #4E5C75;
+}
+
+.section-1 h2{
+	color: #e8e8e8;
+}
+
+.section-1 span.header-span{
+	border-bottom: 1px solid #e8e8e8;
 }
 
 .section-2{
 	background-color: #ffffff;
+}
+
+.section-3{
+	background-color: #4E5C75;
+}
+
+.section-3 h2{
+	color: #e8e8e8;
+}
+
+.section-3 span.header-span{
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.section-4{
+	background-color: grey;
+}
+
+.section-4 h2{
+	color: #e8e8e8;
+}
+
+.section-4 span.header-span{
+	border-bottom: 1px solid #e8e8e8;
 }
 
 .icon{
@@ -124,11 +156,14 @@ h3{
 	width: 400px;
 	margin: 0px auto 80px auto;
 	display: block;
+	padding: 5px;
+	background-color: #e8e8e8;
+	border: 1px solid #2c3442;
 }
 
 .card{
 
-	background-color: white;
+	background-color: #e8e8e8;
 	border-radius: 5px;
 	box-shadow: 1px 1px #cecccc;
 	line-height: 2em;
@@ -141,7 +176,7 @@ h3{
 
 .drive-card{
 
-	background-color: white;
+	background-color: #e8e8e8;
 	border-radius: 5px;
 	box-shadow: 1px 1px #cecccc;
 	width: 100%;
@@ -182,7 +217,7 @@ svg {
 .text-copy {
   fill: none;
   padding-bottom: 20px;
-  stroke: #b537ce;
+  stroke: #D2D29D;
   stroke-dasharray: 0 100%;
   stroke-width: 2px;
   webkit-animation: dash 4s linear forwards;
@@ -196,9 +231,6 @@ svg {
   }
 }
 
-.section-3{
-	background-color: grey;
-}
 
 label{
 	font-family: 'Oxygen', sans-serif;
@@ -282,5 +314,5 @@ button{
 }
 
 .contact-info a:hover{
-	color: red;
+	color: #db0606;
 }
