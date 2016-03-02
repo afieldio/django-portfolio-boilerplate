@@ -8,42 +8,34 @@
 <div class="header" id="header">
 
   <div class="container">
-    <p class="first">Adam</p>
-    <!-- <p class="last">Field</p> -->
+    <div class="first">
+
+      <div class="letter">
+        <p class="letter-a">A</p>
+      </div>
+      
+      
+      <div class="letter ">
+        <p class="letter-d">d</p>  
+      </div>
+      
+
+      <div class="letter ">
+        <p class="letter-a2">a</p>
+      </div>
+      
+      <div class="letter">
+        <p class="letter-m">m</p>
+      </div>
+    </div> 
+    
+    
+   <div id='next' class="more-link fa fa-chevron-down fa-2x" onclick="explode()"> </div>
+   
   </div>
-  <!-- <svg viewBox="0 0 800 600" class="svg-view">
-    <symbol id="s-text">
-      <text text-anchor="middle"
-            x="50%"
-            y="35%"
-            class="text--line"
-            >
-        Adam
-      </text>
-      <text text-anchor="middle"
-            x="50%"
-            y="75%"
-            class="text--line2"
-            >
-        Field
-      </text>
-    </symbol>
-    <g class="g-ants">
-      <use xlink:href="#s-text"
-        class="text-copy"></use>     
-      <use xlink:href="#s-text"
-        class="text-copy"></use>     
-      <use xlink:href="#s-text"
-        class="text-copy"></use>     
-      <use xlink:href="#s-text"
-        class="text-copy"></use>     
-      <use xlink:href="#s-text"
-        class="text-copy"></use>     
-    </g>
-  </svg> -->
 </div>
 
-<div class="section-1">
+<div class="section-1" id="section-1">
   <div class="container">
     <h2><span class="header-span"></span>Who am I?<span class="header-span"></span></h2>
     <div class="col-md-6">
@@ -214,6 +206,19 @@
       }
 
       window.onload=initMap();
+    </script>
+    <script type="text/javascript">
+          $(document).ready(function(){
+
+              $("#next").click(function(){
+                 $('html, body').animate({
+                    scrollTop: $("#section-1").offset().top
+                }, 1000);
+              });
+
+              
+          });
+          
     </script>
 
 

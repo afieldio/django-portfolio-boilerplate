@@ -91,8 +91,6 @@ h3{
 
 .header{
 	background: #5A5279;
-	/*background-size: .12em 100%;*/
-	/*font: 16em/1 'Roboto';*/
 	height: 100vh;
 	box-shadow: 10px 10px black;
 	
@@ -100,15 +98,107 @@ h3{
 
 .header p{
 	font-family: 'Plexifont';
-	text-align: center;
 	color: #FEFDD9;
-	vertical-align: middle;
-	padding-top: 30vh
+	display:inline-block;
+	font-size: 10em;
+	
+
 }
 
-.header p.first{
-	font-size: 15em;
+.letter{
+	display: inline-block;
+	padding: 100px 40px;
+	cursor: crosshair;
 }
+
+.first{
+	text-align: center;
+	padding-top: 10vh;
+	left: 50%;
+}
+
+
+.more-link{
+	/*background-color: white;*/
+	color: #FEFDD9;
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	cursor:pointer;
+	opacity: 1;
+}
+
+@media only screen and (max-width : 768px){
+  
+	.header p{
+		font-size: 5em;
+	}
+
+	.letter{
+		padding: 20px;
+	}
+
+	.first{
+		padding-top: 40vh;
+	}
+
+	.more-link{
+		margin-top: 50px;
+	}
+}
+
+
+
+
+
+
+.letter p{
+	-webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+}
+
+.letter:hover > .letter-a {
+   -webkit-transform: translate(-2em,-1em);
+    -moz-transform: translate(-2em,-1em);
+    -o-transform: translate(-2em,-1em);
+    -ms-transform: translate(-2em,-1em);
+    transform: translate(-2em,-1em);
+}
+
+.letter:hover > .letter-d{
+	-webkit-transform: translate(-2em,1em);
+    -moz-transform: translate(-2em,1em);
+    -o-transform: translate(-2em,1em);
+    -ms-transform: translate(-2em,1em);
+    transform: translate(-2em,1em);
+}
+
+.letter:hover > .letter-a2{
+	-webkit-transform: translate(2em,1em);
+    -moz-transform: translate(2em,1em);
+    -o-transform: translate(2em,1em);
+    -ms-transform: translate(2em,1em);
+    transform: translate(2em,1em);
+}
+
+.letter:hover > .letter-m{
+	-webkit-transform: translate(2em,-1em);
+    -moz-transform: translate(2em,-1em);
+    -o-transform: translate(2em,-1em);
+    -ms-transform: translate(2em,-1em);
+    transform: translate(2em,-1em);
+}
+
+
+
+
+
+.more-link:hover{
+	opacity: 0.6;
+}
+
 
 @media only screen and (max-width : 768px){
   
