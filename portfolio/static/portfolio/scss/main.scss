@@ -1,0 +1,371 @@
+@import "normalize";
+@import "palette";
+@import "components";
+@import "bootstrap";
+
+header {
+	width:100%;
+	height:100vh;
+	position:relative;
+	top:0;
+	left:0;
+	background-color: $color1;
+}
+
+#header-canvas {
+	width: 100%;
+}
+
+.large-header {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	z-index: 1;
+
+	h1 {
+		text-align: center;
+		color: $color2;
+		padding-top: 35vh;
+		font-size: 4em;
+	}
+}
+
+.more-info{
+	display: block;
+	width: 50px;
+	margin: 0px auto;
+	color: $color2;
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.more-info:hover {
+	color: $color4;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+.about-me {
+	background-color: $color2;
+	.about-content {
+		
+		.about-img {
+			width: 50%;
+			margin: 40px auto 30px auto;
+			-webkit-mask-image: url(../img/polygon.svg), none;
+			-o-mask-image: url(../img/polygon.svg), none;
+			-moz-mask-image: url(../img/polygon.svg), none;
+			mask-image: url(../img/polygon.svg), none;
+			-webkit-mask-repeat: no-repeat;
+			-webkit-mask-size: 100%;
+			-o-mask-repeat: no-repeat;
+			-o-mask-size: 100%;
+			-moz-mask-repeat: no-repeat;
+			-moz-mask-size: 100%;
+		}
+
+
+		.about-text {	
+			margin: 0px 50px 40px 0px;
+			color: $color1;
+			text-align: justify;
+			// padding: 0px 20px 20px 20px;
+		}
+
+		.about-text h3 {
+			padding-bottom: 20px;
+		}
+
+		@media screen and (max-width: 960px) {
+			.about-img {
+				width: 60%;
+				margin-bottom: 3rem;
+			}
+
+			.about-text {
+				margin: 0px 20px 40px 20px;
+			}
+
+			.about-text h3 {
+				text-align: center;
+			}
+		}
+	}
+}
+
+
+
+.the-past {
+	background-color: #f8f8f8;
+
+		.aviation-img img{
+			float: left;
+		}
+
+		.aviation-text{
+			clear: both;
+			margin: 0px 60px 0px 0px;
+			text-align: justify;
+			color: $color3;
+			h3 {
+				padding-bottom: 20px;
+				text-align: left;
+			}
+		}
+
+		@media screen and (max-width: 960px) { 
+			.aviation-img img{
+				width: 100%;
+				float: left;
+			}
+			.aviation-text {
+				display: block;
+				padding-top: 20px;
+				margin: 20px 20px 40px 20px;
+			}
+
+			.aviation-text h3 {
+				
+				text-align: center;
+			}
+		}
+
+	
+}
+
+
+
+.the-student {
+	background-color: $color4;
+
+	.student-text {
+		clear: both;
+		text-align: justify;
+		margin: 0px 0px 0px 60px;
+
+		h3 {
+			padding-bottom: 20px;
+		}
+	}
+
+	.student-img img {
+		height: auto;
+		float: right;
+	}
+
+	@media screen and (max-width: 960px) { 
+		.student-img img{
+			width: 100%;
+			height: auto;
+			float: right;
+		}
+
+		.student-text {
+			display: block;
+			padding-top: 20px;
+			margin: 0px 20px 40px 20px;
+		}
+
+		.student-text h3 {
+			
+			text-align: center;
+		}
+	}
+}
+
+.the-pm {
+	background-color: #2c242e;
+
+	.pm-content {
+		color: #F0E8DE;
+		text-align: justify;
+		
+		h3 {
+			padding-bottom: 20px;
+		}
+	}
+
+	.pm-img {
+		display: block;
+		width: 50%;
+		margin: 0px auto;
+	}
+
+	@media screen and (max-width: 960px) { 
+		.pm-text {
+			margin: 0px 20px 40px 20px;
+
+			h3 {
+				text-align: center;
+			}
+		}
+	}
+}
+
+.the-awards {
+	background-color: $color1;
+
+	.awards-content {
+		width: 60%;
+		text-align: justify;
+		margin: 0px auto;
+		padding: 20px 0px 20px 0px;
+		color: $color2;
+
+		h3 {
+			text-align: center;
+		}
+
+		i {
+			padding: 0px 20px;
+			-webkit-animation:spin 8s linear infinite;
+			-moz-animation:spin 8s linear infinite;
+			animation:spin 8s linear infinite;
+		}
+	}
+
+	.card-container {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+
+	.card {
+		width: 100%;
+		border: 1px solid gray;
+		margin-right: 20px;
+		border-radius: 5px;
+		display: -webkit-flex;
+    	display: -ms-flexbox;
+    	display: flex;
+
+		.card-content {
+			padding: 20px;
+
+			h4 {
+				border-bottom: 1px solid gray;
+				padding-bottom: 10px;
+			}
+
+			a {
+				margin-top: 20px;
+			}
+		}
+
+		.card-img img {
+			width: 100%;
+		}
+
+
+	}
+}
+
+.star i{
+	
+}
+
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+
+
+
+// .frame {  
+//     position: relative;
+//     img{
+   
+//     }
+// }
+
+// .fade {
+//     height: inherit;
+//     width: 100%;
+//     position:absolute;
+//     // background: -webkit-linear-gradient(left, 
+//     //             rgba(255,255,255,0.65) 0%, 
+//     //             rgba(0,0,0,0) 20%,
+//     //             rgba(0,0,0,0) 80%,
+//     //             rgba(0,0,0,0.65) 100%
+//     // );
+
+// 	// background: red; /* For browsers that do not support gradients */
+// 	// background: -webkit-linear-gradient(left,rgba(255,0,0,0),rgba(255,0,0,1)); /*Safari 5.1-6*/
+// 	// background: -o-linear-gradient(right,rgba(255,0,0,0),rgba(255,0,0,1)); /*Opera 11.1-12*/
+// 	// background: -moz-linear-gradient(right,rgba(255,0,0,0),rgba(255,0,0,1)); /*Fx 3.6-15*/
+// 	// background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /*Standard*/
+// }
+
+
+// #canvas-wrapper {
+// 	position: relative;
+// 	width: 1240px;
+// 	margin: 0px auto;
+
+// }
+// canvas {
+// 	position: absolute;
+// 	top: 0px;
+// 	left: 0px;
+// 	background: transparent;
+
+	
+	
+// }
+
+
+
+#background {
+		z-index: -10;
+		border: 1px solid grey;
+}
+
+#main {
+	z-index: -1;
+}
+#ship {
+	z-index: 0;
+}
+.score {
+	position: relative;
+	float: right;
+	color: #FF7F00;
+	font-family: "Reenie Beanie";
+	cursor: default;
+	font-size: 50px;
+}
+.game-over {
+	position: relative;
+	width: 200px;
+	margin: 0px auto;
+	padding-top: 310px;
+	color: #FF7F00;
+	font-family: "Reenie Beanie";
+	font-size: 30px;
+	cursor: default;
+	display: none;
+}
+.game-over button {
+	margin: 0px auto;
+	font-family: "Reenie Beanie";
+	font-size: 20px;
+	background-color: blue;
+	cursor: pointer;
+	position: relative;
+	left: 50px;
+}
+.game-over button:hover {
+	color: #FFD700;
+}

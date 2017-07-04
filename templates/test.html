@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<script type="">
+	var canvas = document.createElement('canvas');
+	canvas.id     = "canvas";
+	canvas.width  = $( window ).outerWidth();
+	canvas.height = $( window ).outerHeight();
+	canvas.style.position = "absolute";
+	canvas.style.top = "0";
+	canvas.style.left = "0";
+	canvas.style.right = "0";
+	canvas.style.bottom = "0";
+	canvas.style.backgroundColor = "#f5f5f5";
+	document.body.appendChild(canvas);
+
+	var ctx = document.getElementById('canvas').getContext("2d");
+
+	var circles = new Array();
+         
+	window.requestAnimFrame = (function(){
+	  return  window.requestAnimationFrame       ||
+	          window.webkitRequestAnimationFrame ||
+	          window.mozRequestAnimationFrame    ||
+	          function( callback ){
+	            window.setTimeout(callback, 1000 / 60);
+	          };
+	})();
+
+	function Circle(radius, speed, width, xPos, yPos) {
+	  this.radius = radius;
+	  this.speed = speed;
+	  this.width = width;
+	  this.xPos = xPos;
+	  this.yPos = yPos;
+	 
+	  this.counter = 0;
+
+	  var signHelper = Math.floor(Math.random() * 2);
+ 
+	  if (signHelper == 1) {
+	    this.sign = -1;
+	  } else {
+	    this.sign = 1;
+	  }
+	 
+	}
+
+	Circle.prototype.update = function () {
+	  this.counter += this.sign * this.speed;
+	  ctx.beginPath();
+	  this.xPos += 1;
+	  this.yPos +=1;         
+	  // ctx.arc(this.xPos + Math.cos(this.counter / 100) * this.radius,
+   //      this.yPos + Math.sin(this.counter / 100) * this.radius,
+   //      this.width,
+   //      0,
+   //      Math.PI * 2,
+   //      false);
+	                             
+	  ctx.closePath();
+	 
+	  ctx.fillStyle = 'rgba(185, 211, 238,' + this.opacity + ')';
+	  ctx.fill();
+	};
+
+	function drawCircles() {
+	  for (var i = 0; i < 30; i++) {
+	    var randomX = Math.floor((Math.random() * canvas.width) + 1);
+	    var randomY = Math.floor((Math.random() * canvas.height)+1);
+	    var speed = .2 + Math.random() * 3;
+	    var size = 5 + Math.random() * 100;
+	 
+	    var circle = new Circle(100, speed, size, randomX, randomY);
+	    circles.push(circle);
+	  }
+
+	  draw();
+	}
+
+	function drawLine() {
+		 for (var j=0; j<circles.length; j++){
+			var con = Math.floor((Math.random() * circles.length));
+		  	ctx.beginPath();
+		  	console.log("Start: "+circles[j].xPos+" "+circles[j].yPos)
+		  	console.log("End: "+circles[con].xPos+" "+circles[con].yPos)
+			ctx.moveTo(circles[j].xPos,circles[j].yPos);
+			ctx.lineTo(circles[con].xPos,circles[con].yPos);
+			ctx.strokeStyle="red";
+			ctx.stroke();
+			console.log("Line")
+		}
+
+		
+		draw();
+	}
+
+	drawCircles();
+	drawLine();
+	 
+	function draw() {
+	  ctx.clearRect(0,0, canvas.width, canvas.height);
+	  
+	  for (var i = 0; i < circles.length; i++) {
+	    var myCircle = circles[i];
+	    myCircle.update();
+	    drawLine();
+	  }
+
+
+	  
+	  requestAnimationFrame(draw);
+	}
+
+</script>
+{% endblock %}

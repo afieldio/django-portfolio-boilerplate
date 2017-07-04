@@ -18,6 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url('^markdown/', include('django_markdown.urls')),
     url(r'^$', 'portfolio.views.home', name='home'),
+    url(r'^test/$', 'portfolio.views.test', name='test'),
+    url(r'^game/$', 'portfolio.views.game', name='test'),
 ]

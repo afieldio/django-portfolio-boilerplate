@@ -49,3 +49,9 @@ def home(request):
 
     context = RequestContext(request, {'form': form, })
     return render_to_response('home.html', context_instance=context)
+
+def test(request):
+    return render_to_response('test.html')
+
+def game(request):
+    return render_to_response('game.html')

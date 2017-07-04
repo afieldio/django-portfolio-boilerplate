@@ -5,158 +5,211 @@
 {% endblock %}
 
 {% block content %}
-<div class="header" id="header">
 
-  <div class="container">
-    <div class="first">
 
-      <div class="letter">
-        <p class="letter-a">A</p>
+<header>
+  <div id="large-header" class="large-header">
+      <canvas id="header-canvas"></canvas>
+      <h1>wings to websites</h1>
+      <div class="col-md-1 center-block">
+        <i class="fa fa-chevron-circle-down more-info" id="next" aria-hidden="true"></i>
       </div>
-      
-      
-      <div class="letter ">
-        <p class="letter-d">d</p>  
-      </div>
-      
+  </div>  
+</header>
 
-      <div class="letter ">
-        <p class="letter-a2">a</p>
-      </div>
-      
-      <div class="letter">
-        <p class="letter-m">m</p>
-      </div>
-    </div> 
-    
-    
-   <div id='next' class="more-link fa fa-chevron-down fa-2x" onclick="explode()"> </div>
-   
-  </div>
-</div>
-
-<div class="section-1" id="section-1">
-  <div class="container">
-    <h2><span class="header-span"></span>Who am I?<span class="header-span"></span></h2>
-    <div class="col-md-6">
-      <img class="img-responsive img-circle profile-img" src="{% static 'portfolio/img/AF_profile.jpg'%}">
-    </div>
-    <div class="col-md-6">
-      <div class="card">
-      <h3>Manager, Developer, Pilot</h3>
-      <p>I am a Project Manager for Digital Agency called <a href="p.ota.to">Potato</a>. I recently went back to University after a career as a commercial pilot. I gained a first class degree in Web Development where we studied a range of languages and other web related skills. It is great to be a part of this industry - lots of creative, inspiring people and enough variety to keep me on my toes!</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section-2">
-  <div class="container">
-    <h2><span class="header-span"></span>What do I do?<span class="header-span"></span></h2>
-    <div class="col-md-4 section-block">
-        <img class="center-block" src="{% static 'portfolio/img/design.jpg' %}">
-        <h3>Design</h3>
-        <p>I can help bring your idea to life. I aim to get a good understanding of the client and users needs to create a solution that is bespoke, engaging and enjoyable. </p>
-    </div>
-    <div class="col-md-4 section-block">
-      
-      <img class="center-block" src="{% static 'portfolio/img/screw_driver.jpg' %}">
-      <h3>Develop</h3>
-      <p>I am confident with the basics (HTML, CSS and JS) and have experience with backend frameworks like Django and Symphony2. I also enjoy playing with my RPi!</p>
-      
-    </div>
-    <div class="col-md-4 section-block">
-      
-      <img class="center-block" src="{% static 'portfolio/img/deploy.jpg' %}">
-      <h3>Deploy</h3>
-      <p>This site is deployed on a DigialOcean droplet so I have an understanding of basic server configuration and setup (Nginx, Gunicorn, Supervisor). </p>
-      
-    </div>
-  </div>
-</div>
-
-<div class="section-3">
-  <div class="container">
-    <h2><span class="header-span"></span>What drives me?<span class="header-span"></span></h2>
-    <div class="col-md-4">
-      <div class="drive-card">
-        <h3>Challenge</h3>
-        <p>I love a good challenge and there is nothing like the feeling of overcoming an obstacle. Neil Armstrong said, "I think we're going to the moon because it's in the nature of the human being to face challenges."</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="drive-card">
-      <h3>Learn</h3>
-      <p>I think the greatest aim in life is to become a polymath! Going back to University at a later stage in life has given me a re-newed fascination with wanting to expand my knowledge base.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="drive-card">
-      <h3>Build</h3>
-      <p>Seeing something transform from an idea into a working, living, breathing product is incredible to watch. Whether it be websites, houses or event backyard aquaponic systems I love to get my hands dirty.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section-4" id="contact">
-  <div class="container contact-container">
-    <h2><span class="header-span"></span>Contact Me<span class="header-span"></span></h2>
-    <div class="col-md-6">
-      <h3 class="contact-h3">Fill in the form</h3>
-
-
-      <form method="post">
-      {% csrf_token %}
-      
-      <div class="form-group">
-        <div>
-          <label for="{{form.name_id}}">Name <p class="required">*</p></label>
-          <span class="error-span pull-right">{{form.name.errors}}</span>
+<section class="about-me">
+    <div class="container-fluid">
+      <div class="about-content row vertical-align">
+          <div class="col-md-6">
+            <img class="about-img center-block" src="{% static 'portfolio/img/profile.png' %}" >
+          </div>
+          <div class="about-text col-md-6">
+            <h3>
+              Hello! My name is Adam.
+            </h3>
+            <p>
+              I am a Technical project manager who has delivered award winning products for Google and Saatchi & Saatchi. An advocate of agile thinking and lover of efficiency and process. I also like to dabble in code, have a life long ambition to become a polymath and think Aquaponics will help solve the food crisis.
+            </p>
+            <p>
+              Question is, how did I get here?
+            </p>
+          
         </div>
+      </div>
+    </div>
+</section>
+
+<section class="the-past">
+  <div class="container-fluid">
+    <div class="past-content row vertical-align">
         
-        <input type="{{form.name_id}}" name="name" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="{{form.phone_id}}">Phone </label>
-        <input type="{{form.phone_id}}" name="phone" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <div>
-          <label for="{{form.email_id}}">Email <p class="required">*</p></label>
-          <span class="error-span pull-right">{{form.email.errors}}</span>
+          <picture class="aviation-img">
+            <source media="(max-width:880px)" srcset="{% static 'portfolio/img/aviation.jpg' %}">
+            <img src="{% static 'portfolio/img/aviation.png' %}" alt="Wright Brothers first flight">
+          </picture>
+        
+      
+    
+        <div class="aviation-text">
+          
+            <h3>Adam the pilot</h3>
+            <p>
+              I started my career as a commercial pilot and have over 3000 hours on a Boeing 737-800. I learnt a lot about effective communication, leadership qualities and also that the devil is in the detail but you can't aford to lose sight of the bigger picture.
+            </p>
+            <p>
+              After nearly five years when my contract came to an end I was at one of those forks in life. I decided to take the red pill and haven't looked back!
+            </p>
+        
         </div>
-        
-        <input type="{{form.email_id}}" name="email" class="form-control">
+    </div>
+  </div>
+</section>
+
+<section class="the-student">
+  <div class="container-fluid">
+    <div class="student-content row vertical-align">
+      <div class="student-text">
+        <h3>Adam the student</h3>
+        <p>
+          After leaving aviation I went back to University to study for a BSc in web development. We covered a whole range of topics from UX/HCI, JAVA, JS, PHP. We even did some Action Script! For my final disertation I focused on learning some Python / C++ and built a Raspberry Pi and Arduino powered <a href="http://crox.io" >Aquaponic system</a>.
+        </p>
       </div>
+      <picture class="student-img">
+        <source media="(max-width:880px)" srcset="{% static 'portfolio/img/goldfish.jpg' %}">
+        <img src="{% static 'portfolio/img/goldfish.png' %}" alt="Henry the goldfish">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<section class="the-pm">
+  <div class="container">
+    <div class="pm-content row vertical-align">
+      
+        <div class="col-md-6">
+          <img class="pm-img" src="{% static 'portfolio/img/potato.png'%}">
+        </div>
+        <div class="col-md-6">
+          <div class="pm-text">
+            <h3>Adam the project manager</h3>
+            <p>
+              I have been working at <a href="https://p.ota.to">Potato</a> for three years now. Starting as a junior PM I was promoted after a year to technical project manager. I have worked on a wide range of projects from bespoke project managment tools to overseeing the overhaul of a major website that recieves millions of hits a day.
+            </p>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</section>
+
+<section class="the-awards">
+    <div class="container">
+      <div class="awards-content">
+        <h3><i class="fa fa-star star" aria-hidden="true"></i>Award winning projects<i class="fa fa-star star" aria-hidden="true"></i></h3>
+        <p>Websites need teams of people and these awards wouldn't have been won without the hard work from all invovled. It is nice to see something you have worked on being recognised though!</p>
+      </div>
+    
+      <div class="card-container">
+        
+          <div class="card">
+            <div class="card-img">
+              <img src="{% static 'portfolio/img/vas.png' %}">
+            </div>
+            <div class="card-content">
+              <h4>Virtual Art Sessions</h4>
+              <p>A colaboration with the DART and Tilt Brush teams at Google.</p>
+              <div class="award-list">
+                <ul>
+                  <li><em><a href="https://thefwa.com/cases/virtual-art-sessions">FWA of the Day - 9 May 2016</a></em></li>
+                </ul>
+              </div>
+              <a href="https://virtualart.chromeexperiments.com/">Check it out</a>
+            </div>
+          </div>
+        
+        
+          <div class="card">
+            <div class="card-img">
+              <img src="{% static 'portfolio/img/vad.png' %}">
+            </div>
+            <div class="card-content">
+              <h4>The Vocal Adventure</h4>
+              <p>A colaboration with Saatchi & Saatchi and VocalID</p>
+              <div class="award-list">
+                <ul>
+                  <li><em><a href="https://thefwa.com/cases/goldivox">FWA of the Day - 13 May 2016</a></em></li>
+                  <li><em><a href="https://thefwa.com/cases/goldivox">FWA Cutting edge award - 11 Jul 2016</a></em></li>
+                </ul>
+              </div>
+              <a href="https://thevocaladventure.com/">Check it out</a>
+            </div>
+        
+          </div>
+        
+      </div>
+
+    </div> <!-- End of container -->
+</section>
+
+<section>
+  <div class="section-4" id="contact">
+    <div class="container contact-container">
+      <h2><span class="header-span"></span>Contact Me<span class="header-span"></span></h2>
+      <div class="col-md-6">
+        <h3 class="contact-h3">Fill in the form</h3>
+
+
+        <form method="post">
+        {% csrf_token %}
+        
+        <div class="form-group">
+          <div>
+            <label for="{{form.name_id}}">Name <p class="required">*</p></label>
+            <span class="error-span pull-right">{{form.name.errors}}</span>
+          </div>
+          
+          <input type="{{form.name_id}}" name="name" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="{{form.phone_id}}">Phone </label>
+          <input type="{{form.phone_id}}" name="phone" class="form-control">
+        </div>
 
         <div class="form-group">
           <div>
-            <label for="{{form.description_id}}">Description <p class="required">*</p></label>
-            <span class="error-span pull-right">{{form.description.errors}}</span>
+            <label for="{{form.email_id}}">Email <p class="required">*</p></label>
+            <span class="error-span pull-right">{{form.email.errors}}</span>
           </div>
-          <textarea type="{{form.description_id}}" name="description" class="form-control" rows="5"></textarea>
+          
+          <input type="{{form.email_id}}" name="email" class="form-control">
         </div>
-      
-      <button class="btn btn-default" type="submit" value="Send">Send</button>
-      </form>
-    </div>
 
-    <div class="col-md-6">
-      <h3 class="contact-h3">Find more here</h3>
-      <div class="contact-info">
-        <p class="phone">Phone: <phone>+44 (0) 7590 472355</phone></p>
-        <a href="{% static 'portfolio/AdamField_CV.pdf'%}" data-toggle="tooltip" title="CV" data-placement="bottom" target="_blank" download><p class="fa fa-download fa-2x download-icon"></p></a>
-        <a href="https://github.com/afieldio" data-toggle="tooltip" title="Github" data-placement="bottom" target="_blank"><p class="fa fa-github fa-2x download-icon"></p></a>
-        <div id="map"></div>
+          <div class="form-group">
+            <div>
+              <label for="{{form.description_id}}">Description <p class="required">*</p></label>
+              <span class="error-span pull-right">{{form.description.errors}}</span>
+            </div>
+            <textarea type="{{form.description_id}}" name="description" class="form-control" rows="5"></textarea>
+          </div>
+        
+        <button class="btn btn-default" type="submit" value="Send">Send</button>
+        </form>
       </div>
-    </div>
-    
-  </div>
-</div>
 
+      <div class="col-md-6">
+        <h3 class="contact-h3">Find more here</h3>
+        <div class="contact-info">
+          <p class="phone">Phone: <phone>+44 (0) 7590 472355</phone></p>
+          <a href="{% static 'portfolio/AdamField_CV.pdf'%}" data-toggle="tooltip" title="CV" data-placement="bottom" target="_blank" download><p class="fa fa-download fa-2x download-icon"></p></a>
+          <a href="https://github.com/afieldio" data-toggle="tooltip" title="Github" data-placement="bottom" target="_blank"><p class="fa fa-github fa-2x download-icon"></p></a>
+          <div id="map"></div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
 {% endblock %}
 
 {% block endscript %}
@@ -170,6 +223,18 @@
           }
       </script>
     {% endif %}
+
+    <script type="">
+      $(window).on("load, resize", function() {
+        var viewportWidth = $(window).width();
+        if (viewportWidth < 960) {
+                $(".row").removeClass("vertical-align");
+        }
+        if (viewportWidth >=960){
+          $(".row").addClass("vertical-align");
+        }
+    });
+    </script>
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
     <script type="text/javascript">
@@ -212,8 +277,8 @@
 
               $("#next").click(function(){
                  $('html, body').animate({
-                    scrollTop: $("#section-1").offset().top
-                }, 1000);
+                    scrollTop: $(".about-me").offset().top
+                }, 750);
               });
 
               

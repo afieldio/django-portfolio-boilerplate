@@ -38,10 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolio',
-    'django_markdown',
-    'imagekit',
-    'jquery',
-    'bootstrap3',
 ]
 
 MIDDLEWARE_CLASSES = [
