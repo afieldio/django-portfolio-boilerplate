@@ -6361,7 +6361,9 @@ header {
   @media screen and (max-width: 960px) {
     .the-awards .awards-content {
       width: 100%;
-      padding: 20px; } }
+      padding: 20px; }
+      .the-awards .awards-content h3 {
+        font-size: 1.2em; } }
   .the-awards .card-container {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6433,6 +6435,10 @@ header {
         -moz-transition: color 0.2s ease-out;
         -o-transition: color 0.2s ease-out;
         transition: color 0.2s ease-out; }
+  @media screen and (max-width: 960px) {
+    .contact-me .contact-content {
+      width: 100%;
+      padding: 20px 20px 0px 20px; } }
   .contact-me .form-container {
     float: none;
     margin: 0px auto; }

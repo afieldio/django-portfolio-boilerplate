@@ -241,6 +241,10 @@ header {
 		.awards-content {
 			width: 100%;
 			padding: 20px;
+
+			h3 {
+				font-size: 1.2em;
+			}
 		}
 	}
 
@@ -337,6 +341,13 @@ header {
 				-o-transition: color 0.2s ease-out;
 				transition: color 0.2s ease-out;
 			}
+		}
+	}
+
+	@media screen and (max-width: 960px) {
+		.contact-content {
+			width: 100%;
+			padding: 20px 20px 0px 20px;
 		}
 	}
 
