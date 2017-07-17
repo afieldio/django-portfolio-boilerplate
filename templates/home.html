@@ -4,6 +4,11 @@
 {% block title %}
 {% endblock %}
 
+{% block head %}
+<script type="text/javascript" src="{% static 'portfolio/js/map.js'%}"></script>
+<script type="text/javascript" src="{% static 'portfolio/js/imageHandler.js'%}"></script>
+{% endblock %}
+
 {% block content %}
 
 
@@ -11,7 +16,7 @@
   <div id="large-header" class="large-header">
       <canvas id="header-canvas"></canvas>
       <h1>wings to websites</h1>
-      <div class="col-md-1 center-block">
+      <div class="next-section">
         <i class="fa fa-chevron-circle-down more-info" id="next" aria-hidden="true"></i>
       </div>
   </div>  
@@ -21,7 +26,7 @@
     <div class="container-fluid">
       <div class="about-content row vertical-align">
           <div class="col-md-6">
-            <img class="about-img center-block" src="{% static 'portfolio/img/profile.png' %}" >
+            <img class="about-img center-block" src="{% static 'portfolio/img/profile.png' %}" alt="A picture of Adam">
           </div>
           <div class="about-text col-md-6">
             <h3>
@@ -110,40 +115,41 @@
       </div>
     
       <div class="card-container">
-        
           <div class="card">
+            <a target=_blank class="card-link" href="https://virtualart.chromeexperiments.com/">
             <div class="card-img">
-              <img src="{% static 'portfolio/img/vas.png' %}">
+              <img src="{% static 'portfolio/img/vas.png' %}" alt="Screenshot of virtual art sessions">
             </div>
             <div class="card-content">
               <h4>Virtual Art Sessions</h4>
-              <p>A colaboration with the DART and Tilt Brush teams at Google.</p>
+              <p>A colaboration with multiple teams at Google the project was to create a web interface for some really cool digital Artwork created using Tilt Brush.</p>
+
               <div class="award-list">
-                <ul>
-                  <li><em><a href="https://thefwa.com/cases/virtual-art-sessions">FWA of the Day - 9 May 2016</a></em></li>
-                </ul>
+                <a target=_blank href="https://thefwa.com/cases/virtual-art-sessions"><p><i class="fa fa-star star" aria-hidden="true"></i><em>FWA of the Day - 9 May 2016</em></p></a>
               </div>
-              <a href="https://virtualart.chromeexperiments.com/">Check it out</a>
             </div>
+            </a>
           </div>
         
         
           <div class="card">
-            <div class="card-img">
-              <img src="{% static 'portfolio/img/vad.png' %}">
-            </div>
-            <div class="card-content">
-              <h4>The Vocal Adventure</h4>
-              <p>A colaboration with Saatchi & Saatchi and VocalID</p>
-              <div class="award-list">
-                <ul>
-                  <li><em><a href="https://thefwa.com/cases/goldivox">FWA of the Day - 13 May 2016</a></em></li>
-                  <li><em><a href="https://thefwa.com/cases/goldivox">FWA Cutting edge award - 11 Jul 2016</a></em></li>
-                </ul>
+            <a class="card-link" target=_blank href="https://thevocaladventure.com/">
+              <div class="card-img">
+                <img src="{% static 'portfolio/img/vad.png' %}" alt="Screenshot of the vocal adventure">
               </div>
-              <a href="https://thevocaladventure.com/">Check it out</a>
-            </div>
-        
+              <div class="card-content">
+                <h4>The Vocal Adventure</h4>
+                <p>A colaboration with Saatchi & Saatchi and VocalID. Using HTML5 speech recognition API users can narrate sections of a story as Goldivox tries to find a voice that will fit!</p>
+                
+                <div class="award-list">
+                  
+                  <a href="https://thefwa.com/cases/goldivox"><p><i class="fa fa-star star" aria-hidden="true"></i><em>FWA of the Day - 13 May 2016</em></p></a>
+                  
+                  <a href="https://thefwa.com/cases/goldivox"><p><i class="fa fa-star star" aria-hidden="true"></i><em>FWA Cutting edge award - 11 Jul 2016</em></p></a>
+
+                </div>
+              </div>
+            </a>
           </div>
         
       </div>
@@ -151,14 +157,25 @@
     </div> <!-- End of container -->
 </section>
 
-<section>
-  <div class="section-4" id="contact">
-    <div class="container contact-container">
-      <h2><span class="header-span"></span>Contact Me<span class="header-span"></span></h2>
-      <div class="col-md-6">
-        <h3 class="contact-h3">Fill in the form</h3>
+
+<div id="map"></div>
 
 
+<section class="contact-me" id="contact-me">
+    <div class="container">
+      <div class="contact-content">
+        <h3>Want to know more about Adam?</h3>
+        <p>I live in London so if you want to meet in person just get in touch and we can grab a coffee! Please download my CV for contact details or fill in the form below.</p>
+        <div class="download-resume">
+          <a href="{% static 'portfolio/adam_field_resume.pdf'%}" data-toggle="tooltip" title="Resume" data-placement="bottom" target="_blank" download>
+            <h4>Download</h4>
+            <i class="fa fa-download fa-2x"></i>
+          </a>
+        </div>
+        
+      </div>
+
+      <div class="col-md-6 form-container">
         <form method="post">
         {% csrf_token %}
         
@@ -185,31 +202,44 @@
           <input type="{{form.email_id}}" name="email" class="form-control">
         </div>
 
-          <div class="form-group">
-            <div>
-              <label for="{{form.description_id}}">Description <p class="required">*</p></label>
-              <span class="error-span pull-right">{{form.description.errors}}</span>
-            </div>
-            <textarea type="{{form.description_id}}" name="description" class="form-control" rows="5"></textarea>
+        <div class="form-group">
+          <div>
+            <label for="{{form.description_id}}">Description <p class="required">*</p></label>
+            <span class="error-span pull-right">{{form.description.errors}}</span>
           </div>
-        
-        <button class="btn btn-default" type="submit" value="Send">Send</button>
+          <textarea type="{{form.description_id}}" name="description" class="form-control" rows="5"></textarea>
+        </div>
+
+        <div class="form-group">
+          <div class="g-recaptcha" data-sitekey="6LdvSSkUAAAAAJMWws8CX84aANwd74bu8VUIab3H"></div>
+          {% if messages %}
+              {% for message in messages %}
+              <span class="error-span pull-right">{{ message }}</span>
+              {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        <button class="btn send-btn" type="submit" value="Send"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
         </form>
       </div>
 
-      <div class="col-md-6">
-        <h3 class="contact-h3">Find more here</h3>
-        <div class="contact-info">
-          <p class="phone">Phone: <phone>+44 (0) 7590 472355</phone></p>
-          <a href="{% static 'portfolio/AdamField_CV.pdf'%}" data-toggle="tooltip" title="CV" data-placement="bottom" target="_blank" download><p class="fa fa-download fa-2x download-icon"></p></a>
-          <a href="https://github.com/afieldio" data-toggle="tooltip" title="Github" data-placement="bottom" target="_blank"><p class="fa fa-github fa-2x download-icon"></p></a>
-          <div id="map"></div>
-        </div>
+      <div class="col-md-6 detials-container">
+        
+        
       </div>
-      
-    </div>
   </div>
 </section>
+
+
+<footer>
+  <div class="footer-info">
+    <p class="footer-content">Some other places I frequent...</p>
+    <a href="https://github.com/afieldio" class="footer-link" data-toggle="tooltip" title="Github" data-placement="bottom" target="_blank"><p class="fa fa-github fa-2x"></p></a>
+    <a href="https://www.linkedin.com/in/amfield1" class="footer-link" target="_blank" data-toggle="tooltip" title="Linkedin"><p class="fa fa-linkedin fa-2x"></p></a>
+    <a href="https://twitter.com/afieldofdreams" class="footer-link" target="_blank" data-toggle="tooltip" title="Twitter"><p class="fa fa-twitter fa-2x"></p></a>
+  </div>
+</footer>
+
 {% endblock %}
 
 {% block endscript %}
@@ -218,60 +248,28 @@
           var valid = {{form.is_valid|lower}};
           console.log(valid);
           if(valid == false){
-              var section = document.getElementById("contact");
+              var section = document.getElementById("contact-me");
               section.scrollIntoView();
           }
       </script>
     {% endif %}
 
-    <script type="">
+    <script>
       $(window).on("load, resize", function() {
-        var viewportWidth = $(window).width();
+       var viewportWidth = $(window).width();
         if (viewportWidth < 960) {
-                $(".row").removeClass("vertical-align");
-        }
-        if (viewportWidth >=960){
+          $(".row").removeClass("vertical-align");
+        } else if (viewportWidth >=960){
+          $(".row").addClass("vertical-align");
+        } else {
           $(".row").addClass("vertical-align");
         }
-    });
+    }).resize();
     </script>
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-    <script type="text/javascript">
-      function initMap() {
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDijRub6S0OYO1MOUMuhhdhQmsFPgCqnDo&callback=initMap"
+  type="text/javascript"></script>
 
-        var map;
-
-        var myLatLng = {lat: 51.54732, lng: -0.11074};
-
-        // Create a map object and specify the DOM element for display.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: myLatLng,
-          scrollwheel: false,
-          zoom: 15
-        });
-
-        marker = new google.maps.Marker({
-          map: map,
-          draggable: false,
-          animation: google.maps.Animation.DROP,
-          position: myLatLng,
-          title: "I'm here!"
-
-        });
-        marker.addListener('click', toggleBounce);
-      }
-
-      function toggleBounce() {
-        if (marker.getAnimation() !== null) {
-          marker.setAnimation(null);
-        } else {
-          marker.setAnimation(google.maps.Animation.BOUNCE);
-        }
-      }
-
-      window.onload=initMap();
-    </script>
     <script type="text/javascript">
           $(document).ready(function(){
 
@@ -286,7 +284,7 @@
           
     </script>
 
-
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
 
 

@@ -6217,7 +6217,8 @@ header {
   background-color: #e7ecef; }
 
 #header-canvas {
-  width: 100%; }
+  width: 100%;
+  z-index: -1; }
 
 .large-header {
   position: relative;
@@ -6232,17 +6233,17 @@ header {
     padding-top: 35vh;
     font-size: 4em; }
 
-.more-info {
-  display: block;
-  width: 50px;
-  margin: 0px auto;
-  color: #274c77;
-  font-size: 20px;
+.next-section {
   text-align: center;
-  cursor: pointer; }
-
-.more-info:hover {
-  color: #e16036; }
+  width: 50px;
+  height: 50px;
+  margin: 0px auto; }
+  .next-section i {
+    color: #274c77;
+    font-size: 30px;
+    cursor: pointer; }
+  .next-section i:hover {
+    color: #f34f1d; }
 
 .vertical-align {
   display: flex;
@@ -6302,7 +6303,7 @@ header {
       text-align: center; } }
 
 .the-student {
-  background-color: #e16036; }
+  background-color: #f34f1d; }
   .the-student .student-text {
     clear: both;
     text-align: justify;
@@ -6342,44 +6343,59 @@ header {
         text-align: center; } }
 
 .the-awards {
-  background-color: #e7ecef; }
+  background-color: #f8f8f8; }
   .the-awards .awards-content {
     width: 60%;
     text-align: justify;
-    margin: 0px auto;
+    margin: 20px auto;
     padding: 20px 0px 20px 0px;
     color: #274c77; }
     .the-awards .awards-content h3 {
-      text-align: center; }
+      text-align: center;
+      padding-bottom: 20px; }
     .the-awards .awards-content i {
       padding: 0px 20px;
       -webkit-animation: spin 8s linear infinite;
       -moz-animation: spin 8s linear infinite;
       animation: spin 8s linear infinite; }
+  @media screen and (max-width: 960px) {
+    .the-awards .awards-content {
+      width: 100%;
+      padding: 20px; } }
   .the-awards .card-container {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap; }
+    justify-content: space-between;
+    padding-bottom: 40px; }
   .the-awards .card {
-    width: 100%;
     border: 1px solid gray;
-    margin-right: 20px;
     border-radius: 5px;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
+    flex: 0 1 calc(50% - 1em);
+    background-color: #f8f8f8; }
+    .the-awards .card .card-link {
+      text-decoration: none;
+      color: #50514f; }
     .the-awards .card .card-content {
       padding: 20px; }
       .the-awards .card .card-content h4 {
         border-bottom: 1px solid gray;
         padding-bottom: 10px; }
-      .the-awards .card .card-content a {
+      .the-awards .card .card-content .award-list {
         margin-top: 20px; }
+        .the-awards .card .card-content .award-list i {
+          padding-right: 20px; }
+      .the-awards .card .card-content .award-list a:last-child {
+        padding-bottom: 0px; }
     .the-awards .card .card-img img {
       width: 100%; }
+
+@media screen and (max-width: 960px) {
+  .the-awards .card {
+    flex: 0 0 calc(100% - 2em);
+    margin-bottom: 20px; }
+  .the-awards .card-container {
+    flex-direction: column; } }
 
 @-moz-keyframes spin {
   100% {
@@ -6393,6 +6409,123 @@ header {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
+.contact-me {
+  background-color: #e7ecef; }
+  .contact-me .contact-content {
+    width: 60%;
+    text-align: justify;
+    margin: 20px auto;
+    padding: 20px 0px 20px 0px;
+    color: #274c77; }
+    .contact-me .contact-content h3 {
+      text-align: center;
+      padding-bottom: 20px; }
+    .contact-me .contact-content .download-resume {
+      text-align: center;
+      padding-top: 20px; }
+      .contact-me .contact-content .download-resume a {
+        text-decoration: none;
+        color: #274c77; }
+      .contact-me .contact-content .download-resume a:hover {
+        color: #f34f1d;
+        -webkit-transition: color 0.2s ease-out;
+        -moz-transition: color 0.2s ease-out;
+        -o-transition: color 0.2s ease-out;
+        transition: color 0.2s ease-out; }
+  .contact-me .form-container {
+    float: none;
+    margin: 0px auto; }
+
+label {
+  font-weight: 100;
+  font-size: 1.2em;
+  padding: 5px 0px;
+  display: inline-block; }
+
+input, textarea {
+  width: 100%;
+  display: block; }
+
+form {
+  padding-bottom: 60px; }
+
+.required {
+  font-style: italic;
+  font-size: 1em;
+  color: #f24141;
+  display: inline-block; }
+
+.error-span {
+  display: inline-block;
+  float: right;
+  color: #f24141; }
+
+.send-btn {
+  width: 40%;
+  background-color: #247ba0; }
+  .send-btn i {
+    font-size: 2em;
+    color: #e7ecef;
+    padding: 5px; }
+
+.send-btn:hover {
+  background-color: #f34f1d;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out; }
+
+.contact-h3 {
+  padding: 0px 0px 60px 0px; }
+
+.contact-p {
+  text-align: center;
+  padding-bottom: 20px 0px; }
+
+.contact-info {
+  text-align: center; }
+
+.contact-info p {
+  padding-bottom: 20px; }
+
+.contact-info a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  color: white;
+  text-decoration: none; }
+
+.contact-container {
+  padding-bottom: 40px; }
+
+.download-icon {
+  margin-right: 20px; }
+
+.phone {
+  text-align: center; }
+
+.contact-info a:hover {
+  color: #db0606; }
+
+#map {
+  width: 100%;
+  height: 600px; }
+
+footer {
+  height: 200px;
+  background-color: #247ba0;
+  text-align: center; }
+  footer .footer-info {
+    padding-top: 90px; }
+    footer .footer-info .footer-link {
+      color: #e7ecef; }
+      footer .footer-info .footer-link p {
+        padding: 5px; }
+    footer .footer-info .footer-link:hover {
+      color: #f34f1d; }
+    footer .footer-info .footer-content {
+      color: #e7ecef; }
 
 #background {
   z-index: -10;

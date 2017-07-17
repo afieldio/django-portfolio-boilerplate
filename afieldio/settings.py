@@ -25,7 +25,7 @@ SECRET_KEY = 'ozd8wr38gcuruca2h*&h)wyvqb9)utv%49shtu+kay!%+!$e99'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -121,6 +121,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+GOOGLE_RECAPTCHA_SECRET_KEY = 'secret-password'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/

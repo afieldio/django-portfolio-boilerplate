@@ -1,17 +1,19 @@
+import urllib
+import urllib2
+import os
+import json
+
 from django.shortcuts import render, render_to_response, RequestContext
 from django.views.static import serve
 from django.template import Context
 from django.template.loader import get_template
 from django.shortcuts import redirect
 from django.http import HttpResponse
+from django.core.mail import EmailMessage
+from django.contrib import messages
 
 from portfolio.forms import ContactForm
-
-from django.core.mail import EmailMessage
-
-import os
-
-# Create your views here.
+from afieldio import settings
 
 
 def home(request):
@@ -20,30 +22,47 @@ def home(request):
         form = ContactForm(request.POST)
 
         if form.is_valid():
+            ''' Begin reCAPTCHA validation '''
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            url = 'https://www.google.com/recaptcha/api/siteverify'
+            values = {
+                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+                'response': recaptcha_response
+            }
+            data = urllib.urlencode(values)
+            req = urllib2.Request(url, data)
+            response = urllib2.urlopen(req)
+            result = json.load(response)
+            ''' End reCAPTCHA validation '''
 
-            contact_name = request.POST.get('name', '')
-            contact_email = request.POST.get('email', '')
-            form_content = request.POST.get('description', '')
-            # Email the profile with the
-            # contact information
-            template = get_template('contact_template.txt')
-            context = Context({
-                'contact_name': contact_name,
-                'contact_email': contact_email,
-                'form_content': form_content,
-            })
+            if result['success']:
 
-            content = template.render(context)
+                contact_name = request.POST.get('name', '')
+                contact_email = request.POST.get('email', '')
+                form_content = request.POST.get('description', '')
+                # Email the profile with the
+                # contact information
+                template = get_template('contact_template.txt')
+                context = Context({
+                    'contact_name': contact_name,
+                    'contact_email': contact_email,
+                    'form_content': form_content,
+                })
 
-            email = EmailMessage(
-                "New contact form submission",
-                content,
-                "Your website" +'',
-                ['a.field738@gmail.com'],
-                headers = {'Reply-To': contact_email }
-            )
-            email.send()
-            return redirect('home')
+                content = template.render(context)
+
+                email = EmailMessage(
+                    "New contact form submission",
+                    content,
+                    "Your website" +'',
+                    ['a.field738@gmail.com'],
+                    headers = {'Reply-To': contact_email }
+                )
+                email.send()
+                return redirect('home')
+            else:
+                messages.error(request, 'Invalid reCAPTCHA. Please try again.')
+
     else:
         form = ContactForm()
 

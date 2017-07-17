@@ -60,8 +60,6 @@ var imageRepository = new function() {
 		imageLoaded();
 	}
 
-
-	this.background.src = bgs;
 	this.roodle.src = roos;
 	this.bullet.src = bus;
 	this.enemy.src = ens;

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<section class="game" onload="game.init()">
+      <!-- Massive thanks to http://sklambert.com/ whose help has been instrumental (read I copied a lot of his code!) in giving me the knowledge to help create this game! -->
+      <div>
+        <h2>Roodle</h2>
+        <p>This started as a <a href="https://github.com/afieldio/Roodle">LibGdx JAVA game</a> I built whilst at Uni. Found some time over Paternity leave to convert this to an HTML5 game. Still things todo but a good start! Kudos should go to Steven Lambert whose <a href="http://blog.sklambert.com/html5-canvas-game-html5-audio-and-finishing-touches/">HTML 5 Game tutorial</a> was awesome!</p>
+        <p>Controls:
+          <ul>
+            <li>Move: Up, Down, Left, Right</li>
+            <li>Fire: Spacebar</li>
+          </ul>
+        </p>
+      </div>
+      <div id="canvas-wrapper">
+        <button onclick="game.start()"></button>
+        <canvas id="background" class="game-canvas" width="1240" height="800">
+          Your browser does not support canvas. Please try again with a different browser.
+        </canvas>
+        <canvas id="main" class="game-canvas" width="1240" height="800">
+        </canvas>
+        <!-- The canvas the ship uses (can only move up
+         one forth the screen.) -->
+        <canvas id="ship" class="game-canvas" width="1240" height="800">
+        </canvas>
+        <div class="score">SCORE: <span id="score"></span></div>
+        <div class="game-over" id="game-over">GAME OVER<button onclick="game.restart()">Restart</button></div>
+      </div>
+      <div class="clear"></div>
+  </section>
+</div>
+{% endblock %}
