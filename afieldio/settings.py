@@ -121,7 +121,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-GOOGLE_RECAPTCHA_SECRET_KEY = 'secret-password'
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LdvSSkUAAAAABZYSY_WgM6JwRMGmFL-MuXrhG80'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/

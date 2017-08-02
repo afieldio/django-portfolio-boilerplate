@@ -4,6 +4,19 @@
 {% block title %}
 {% endblock %}
 
+{% block head %}
+  <script>
+    var roos = "{% static 'portfolio/img/roodle.png' %}";
+    var bus = "{% static 'portfolio/img/bullet.png'%}";
+    var ens = "{% static 'portfolio/img/enemy1.png'%}";
+    var en2s = "{% static 'portfolio/img/enemy2.png'%}";
+    var en3s = "{% static 'portfolio/img/enemy3.png'%}";
+    var enb = "{% static 'portfolio/img/enemyBullet.png'%}";
+  </script>
+  <script src="{% static 'portfolio/js/roodle.js'%}" type="text/javascript"></script>
+{% endblock %}
+
+
 {% block content %}
 <section class="game" onload="game.init()">
       <!-- Massive thanks to http://sklambert.com/ whose help has been instrumental (read I copied a lot of his code!) in giving me the knowledge to help create this game! -->
