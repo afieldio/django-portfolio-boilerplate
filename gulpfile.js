@@ -5,6 +5,7 @@ var minifycss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var livereload = require('gulp-livereload');
 var fs = require('fs');
+var imagemin = require('gulp-imagemin');
 
 
 var gzip_options = {
@@ -23,6 +24,12 @@ gulp.task('sass', function() {
         .pipe(minifycss())
         .pipe(gulp.dest('portfolio/static/portfolio/css'))
         .pipe(livereload());
+});
+
+gulp.task('image', function() {
+    gulp.src('portfolio/static/portfolio/images/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('portfolio/static/portfolio/img/'))
 });
 
 
@@ -50,4 +57,4 @@ gulp.task('watch', function() {
 
 });
 
-gulp.task('default', ['sass', 'watch', 'symlink']);
+gulp.task('default', ['sass', 'watch', 'image']);

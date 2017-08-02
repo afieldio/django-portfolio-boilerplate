@@ -2,3 +2,4 @@
 *.sqlite3
 node_modules/*
 /afieldio/settings.py
+portfolio/static/portfolio/images/*
