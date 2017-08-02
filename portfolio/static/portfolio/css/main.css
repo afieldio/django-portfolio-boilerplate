@@ -391,7 +391,7 @@ h3 {
 p {
   font-family: "Roboto";
   font-weight: 100;
-  font-size: 1.2em; }
+  font-size: 1.4em; }
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -6220,6 +6220,9 @@ header {
   width: 100%;
   z-index: -1; }
 
+section {
+  min-height: 600px; }
+
 .large-header {
   position: relative;
   width: 100%;
@@ -6250,7 +6253,9 @@ header {
   align-items: center; }
 
 .about-me {
-  background-color: #274c77; }
+  background-color: #274c77;
+  display: flex;
+  align-items: center; }
   .about-me .about-content .about-img {
     width: 50%;
     margin: 40px auto 30px auto;
@@ -6303,7 +6308,8 @@ header {
       text-align: center; } }
 
 .the-student {
-  background-color: #f34f1d; }
+  background-color: #50514f;
+  color: #e7ecef; }
   .the-student .student-text {
     clear: both;
     text-align: justify;
@@ -6326,7 +6332,9 @@ header {
       text-align: center; } }
 
 .the-pm {
-  background-color: #2c242e; }
+  background-color: #2c242e;
+  display: flex;
+  align-items: center; }
   .the-pm .pm-content {
     color: #F0E8DE;
     text-align: justify; }
@@ -6523,13 +6531,17 @@ footer {
   background-color: #247ba0;
   text-align: center; }
   footer .footer-info {
-    padding-top: 90px; }
+    padding-top: 75px; }
     footer .footer-info .footer-link {
       color: #e7ecef; }
       footer .footer-info .footer-link p {
         padding: 5px; }
     footer .footer-info .footer-link:hover {
-      color: #f34f1d; }
+      color: #f34f1d;
+      -webkit-transition: color 0.2s ease-out;
+      -moz-transition: color 0.2s ease-out;
+      -o-transition: color 0.2s ease-out;
+      transition: color 0.2s ease-out; }
     footer .footer-info .footer-content {
       color: #e7ecef; }
 
