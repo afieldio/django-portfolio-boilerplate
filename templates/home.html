@@ -7,6 +7,9 @@
 {% block head %}
 <script type="text/javascript" src="{% static 'portfolio/js/map.js'%}"></script>
 <script type="text/javascript" src="{% static 'portfolio/js/imageHandler.js'%}"></script>
+<link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
 {% endblock %}
 
 {% block content %}
@@ -15,161 +18,95 @@
 <header>
   <div id="large-header" class="large-header">
       <canvas id="header-canvas"></canvas>
-      <h1>wings to websites</h1>
+      <h1>KUBE</h1>
+      <h2>Task management for ground staff</h2>
       <div class="next-section">
         <i class="fa fa-chevron-circle-down more-info" id="next" aria-hidden="true"></i>
       </div>
   </div>  
 </header>
 
+<section class="the-past">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="airplane-1">
+        <img src="{% static 'portfolio/img/airplane-1.png' %}">
+      </div>
+    </div>
+    <div class="past-content row vertical-align">
+        <div class="col-md-3"></div>
+        <div class="aviation-text col-md-6">
+          
+            <h3>Helping the aviation industry do more with less.</h3>
+            <div class="col-md-4 info"><p>Average Delay is 11 minutes</p></div>
+            <div class="col-md-4 info"><p>Each minute of delay costs 72 Euros</p></div>
+            <div class="col-md-4 info"><p>27000 flights per day costs of 2.1M</p></div>
+            
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+  </div>
+</section>
+
 <section class="about-me">
     <div class="container-fluid">
       <div class="about-content row vertical-align">
           <div class="col-md-6">
-            <img class="about-img center-block" src="{% static 'portfolio/img/profile.png' %}" alt="A picture of Adam">
+            <iframe width="442" height="935" src="//invis.io/K6QWNJAFZUV" frameborder="0" allowfullscreen></iframe>
           </div>
           <div class="about-text col-md-6">
             <h3>
-              Hello! My name is Adam.
+              Powered by intelligent, reliable, real time data.
             </h3>
             <p>
-              I am a Technical project manager who has delivered award winning products for Google and Saatchi & Saatchi. An advocate of agile thinking and lover of efficiency and process. I also like to dabble in code, have a life long ambition to become a polymath and think Aquaponics will help solve the food crisis.
+              Kube reduces airport delays by using real time data to optimise ground handling services.
             </p>
             <p>
-              Question is, how did I get here?
+              If you can help out, please get in <a href="#contact-me">touch</a>.
             </p>
-          
         </div>
       </div>
     </div>
 </section>
 
-<section class="the-past">
-  <div class="container-fluid">
-    <div class="past-content row vertical-align">
-        
-          <picture class="aviation-img">
-            <source media="(max-width:880px)" srcset="{% static 'portfolio/img/aviation.jpg' %}">
-            <img src="{% static 'portfolio/img/aviation.png' %}" alt="Wright Brothers first flight">
-          </picture>
-        
-      
-    
-        <div class="aviation-text">
-          
-            <h3>Adam the pilot</h3>
-            <p>
-              I started my career as a commercial pilot and have over 3000 hours on a Boeing 737-800. I learnt a lot about effective communication, leadership qualities and working as part of a team. I also learnt that whilst the devil is in the detail you can never afford to lose sight of the bigger picture.
-            </p>
-            <p>
-              After nearly seven years of flying my contract came to an end I was at one of those forks in the road. I decided to take the red pill and haven't looked back!
-            </p>
-        
-        </div>
-    </div>
-  </div>
-</section>
 
 <section class="the-student">
-  <div class="container-fluid">
-    <div class="student-content row vertical-align">
-      <div class="student-text">
-        <h3>Adam the student</h3>
-        <p>After leaving aviation I went back to University to study for a BSc in web development where I gained a first class degree. It was an intensive two years and where we covered UX and HCI as well as gaining lots of hands on experience with multiple languages including JAVA, JS and PHP.</p>
-
-        <p>My final dissertation focused on creating a closed loop <a href="https://en.wikipedia.org/wiki/Aquaponics">Aquaponic</a> system that was monitored and controlled using a Raspberry Pi and Arduino. Since leaving university I have continued to work on this project and built a larger system in my garden. It might possibly be the UK's first IoT <a href="http://crox.io" >Aquaponic shed</a> powered by Henry and his outlaws (the goldfish!).</p>
-    </div>
-    <picture class="student-img">
-      <source media="(max-width:880px)" srcset="{% static 'portfolio/img/goldfish.jpg' %}">
-      <img src="{% static 'portfolio/img/goldfish.png' %}" alt="Henry the goldfish">
-    </picture>
-    </div>
-  </div>
-</section>
-
-<section class="the-pm">
-  <div class="container">
-    <div class="pm-content row vertical-align">
-        <div class="col-md-6">
-          <img class="pm-img" src="{% static 'portfolio/img/potato.png'%}">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="airplane-1">
+          <img src="{% static 'portfolio/img/departure.png' %}">
         </div>
-        <div class="col-md-6">
-          <div class="pm-text">
-            <h3>Adam the project manager</h3>
+      </div>
+      <div class="about-content row vertical-align">
+          <div class="col-md-3"></div>
+          <div class="about-text col-md-6">
+            <h3>
+              What's next?
+            </h3>
             <p>
-              I have been working at <a href="https://p.ota.to">Potato</a> for nearly three years and have had the pleasure of working on a wide range of projects. Working mainly for Google most of the projects are under NDA's. I can say that my projects have ranged from complex bits of software and CMS's as well as managing the ongoing maintenance of large site that receives millions of hits a day.</p>
-
-              <p>PMing at Potato is not quite like other Agencies. I cover all phases of the project life cycle from stakeholder consultation and requirements gathering through to managing an agile development process with teams of UX/Design and Developers.</p>
+              We're currently on the look out for co-founders, advisors and our initial round of funding. We're excited to see this project really take off!
             </p>
-          </div>
+            <p>
+              If you would like to get involved or can help please get in <a href="#contact-me">touch</a>.
+            </p>
         </div>
-      
+        <div class="col-md-3"></div>
+      </div>
     </div>
-  </div>
-</section>
-
-<section class="the-awards">
-    <div class="container">
-      <div class="awards-content">
-        <h3><i class="fa fa-star star" aria-hidden="true"></i>Award winning projects<i class="fa fa-star star" aria-hidden="true"></i></h3>
-        <p>These awards wouldn't have been won without the hard work from lots of people involved. Nice to see something you have worked on get some recognition though!</p>
-      </div>
-    
-      <div class="card-container">
-          <div class="card">
-            <a target=_blank class="card-link" href="https://virtualart.chromeexperiments.com/">
-            <div class="card-img">
-              <img src="{% static 'portfolio/img/vas.png' %}" alt="Screenshot of virtual art sessions">
-            </div>
-            <div class="card-content">
-              <h4>Virtual Art Sessions</h4>
-              <p>We were part of a team working on a Chrome Experiment that displayed a range digital artwork and illustrations. Using Google's Tilt Brush the artists created 3D designs, the results of which are quite spectacular. This site was turned around in a matter of weeks.</p>
-
-              <div class="award-list">
-                <a target=_blank href="https://thefwa.com/cases/virtual-art-sessions"><p><i class="fa fa-star star" aria-hidden="true"></i><em>FWA of the Day - 9 May 2016</em></p></a>
-              </div>
-            </div>
-            </a>
-          </div>
-        
-        
-          <div class="card">
-            <a class="card-link" target=_blank href="https://thevocaladventure.com/">
-              <div class="card-img">
-                <img src="{% static 'portfolio/img/vad.png' %}" alt="Screenshot of the vocal adventure">
-              </div>
-              <div class="card-content">
-                <h4>The Vocal Adventure</h4>
-                <p>Working in collaboration with Saatchi & Saatchi this was incredible project to be involved with! The aim was to highlight issues faced by people who rely on text to voice synthesizers. Using the Chrome's HTML5 speech recognition API, users navigate the site by narrating sections of a story.</p>
-                
-                <div class="award-list">
-                  
-                  <a href="https://thefwa.com/cases/goldivox"><p><i class="fa fa-star star" aria-hidden="true"></i><em>FWA of the Day - 13 May 2016</em></p></a>
-                  
-                  <a href="https://thefwa.com/cases/goldivox"><p><i class="fa fa-star star" aria-hidden="true"></i><em>FWA Cutting edge award - 11 Jul 2016</em></p></a>
-
-                </div>
-              </div>
-            </a>
-          </div>
-        
-      </div>
-
-    </div> <!-- End of container -->
 </section>
 
 
-<div id="map"></div>
+<!-- <div id="map"></div> -->
 
 
 <section class="contact-me" id="contact-me">
     <div class="container">
-      <div class="contact-content">
-        <h3>Want to know more about Adam?</h3>
-        <p>I live in London so if you want to meet in person just get in touch and we can grab a coffee! Download my CV for contact details or just fill in the form below.</p>
+      <div class="contact">
+        <h3>Want to know more about Kube?</h3>
+        <p>Love to chat about this so please get in touch of you want to know more. Alternatively, download the pitch deck for more information.</p>
         <div class="download-resume">
           <a href="{% static 'portfolio/adam_field_resume.pdf'%}" data-toggle="tooltip" title="Resume" data-placement="bottom" target="_blank" download >
-            <h4>Download</h4>
+            <h4>Pitch Deck</h4>
             <i class="fa fa-download fa-2x"></i>
           </a>
         </div>
@@ -234,10 +171,12 @@
 
 <footer>
   <div class="footer-info">
-    <p class="footer-content">Some other places I frequent...</p>
+    <p class="footer-content">More from the founder...</p>
+    
     <a href="https://github.com/afieldio" class="footer-link" data-toggle="tooltip" title="Github" data-placement="bottom" target="_blank"><p class="fa fa-github fa-2x"></p></a>
     <a href="https://www.linkedin.com/in/amfield1" class="footer-link" target="_blank" data-toggle="tooltip" title="Linkedin"><p class="fa fa-linkedin fa-2x"></p></a>
     <a href="https://twitter.com/afieldofdreams" class="footer-link" target="_blank" data-toggle="tooltip" title="Twitter"><p class="fa fa-twitter fa-2x"></p></a>
+    <p class="footer-content-copy">&copy; 2019</p>
   </div>
 </footer>
 
@@ -276,7 +215,7 @@
 
               $("#next").click(function(){
                  $('html, body').animate({
-                    scrollTop: $(".about-me").offset().top
+                    scrollTop: $(".the-past").offset().top
                 }, 750);
               });
 

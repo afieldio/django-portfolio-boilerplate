@@ -28,13 +28,28 @@ section {
 	background-size: cover;
 	background-position: center center;
 	z-index: 1;
+	text-align: center;
 
 	h1 {
-		text-align: center;
+		font-family: 'Spectral', serif;
 		color: $color2;
 		padding-top: 35vh;
-		font-size: 4em;
+		font-size: 10em;
 	}
+
+	h2 {
+		color: $color4;
+		padding-bottom: 40px;
+	}
+
+	@media screen and (max-width: 960px) {
+
+		h1 {
+			font-size: 8em;
+		}
+	}
+
+
 }
 
 .next-section {
@@ -65,40 +80,35 @@ section {
 	background-color: $color2;
 	display: flex;
 	align-items: center;
+	height: 100vh;
 	.about-content {
 		
-		.about-img {
-			width: 50%;
-			margin: 40px auto 30px auto;
-			-webkit-mask-image: url(../img/polygon.svg), none;
-			-o-mask-image: url(../img/polygon.svg), none;
-			-moz-mask-image: url(../img/polygon.svg), none;
-			mask-image: url(../img/polygon.svg), none;
-			-webkit-mask-repeat: no-repeat;
-			-webkit-mask-size: 100%;
-			-o-mask-repeat: no-repeat;
-			-o-mask-size: 100%;
-			-moz-mask-repeat: no-repeat;
-			-moz-mask-size: 100%;
+		iframe {
+			margin-left: 33%
 		}
-
 
 		.about-text {	
 			margin: 0px 50px 40px 0px;
 			color: $color1;
-			text-align: justify;
-			// padding: 0px 20px 20px 20px;
 		}
 
 		.about-text h3 {
 			padding-bottom: 20px;
+			font-size: 5em;
+		}
+
+		.about-text p {
+
+			font-size: 2em;
+
+
+		}
+
+		.about-text a {
+			color: $color4;
 		}
 
 		@media screen and (max-width: 960px) {
-			.about-img {
-				width: 60%;
-				margin-bottom: 3rem;
-			}
 
 			.about-text {
 				margin: 0px 20px 40px 20px;
@@ -111,65 +121,120 @@ section {
 	}
 }
 
+.about-me {
+	@media screen and (max-width: 960px) {
 
+		height: 100%;
 
-.the-past {
-	background-color: #f8f8f8;
-
-		.aviation-img img{
-			float: left;
+		.about-content iframe {
+			margin: 0;
+			padding: 0;
 		}
+	}
 
-		.aviation-text{
-			clear: both;
-			margin: 0px 60px 0px 0px;
-			text-align: justify;
-			color: $color3;
-			h3 {
-				padding-bottom: 20px;
-				text-align: left;
-			}
-		}
 
-		@media screen and (max-width: 960px) { 
-			.aviation-img img{
-				width: 100%;
-				float: left;
-			}
-			.aviation-text {
-				display: block;
-				padding-top: 20px;
-				margin: 20px 20px 40px 20px;
-			}
-
-			.aviation-text h3 {
-				
-				text-align: center;
-			}
-		}
-
-	
 }
 
 
 
-.the-student {
-	background-color: $color3;
-	color:$color1;
+.the-past {
+	background-color: $color4;
+	height: 100vh;
+	row {
+		text-align: center;
+	}
 
-	.student-text {
-		clear: both;
-		text-align: justify;
-		margin: 0px 0px 0px 60px;
+	.airplane-1 {
+		display:inline-block;
+		margin: 40px auto;
+		padding-top: 150px;
+	}
 
+
+	.aviation-text{
+		color: $color1;
+		
 		h3 {
-			padding-bottom: 20px;
+			padding-bottom: 80px;
+			text-align: center;
+			font-size: 5em;
+		}
+
+		p {
+			
+			font-size: 2em;
+		}
+
+		.info {
+			text-align: center;
+			margin-top: 20px;
 		}
 	}
 
-	.student-img img {
-		height: auto;
-		float: right;
+	
+}
+
+.the-past {
+	@media screen and (max-width: 960px) { 
+		height: 100%;
+
+		.airplane-1 {
+			display: block;
+			height: 50%;
+			padding: 0px;
+			margin: 0px auto;
+
+		}
+
+		.airplane-1 img{
+			display: block;
+			width: 60%;
+			margin: 100px auto 50px auto;
+		}
+
+		.aviation-text {
+			display: block;
+			padding-top: 20px;
+			margin: 20px 20px 40px 20px;
+		}
+
+		.aviation-text h3 {
+			font-size: 3em;
+			text-align: center;
+		}
+	}
+}
+
+
+
+
+
+.the-student {
+	background-color: $color4;
+	height: 100vh;
+	row {
+		text-align: center;
+	}
+
+	.airplane-1 {
+		display:inline-block;
+		margin: 40px auto;
+		padding-top: 150px;
+	}
+
+	.about-text {
+		color: $color1;
+
+		h3 {
+			padding-bottom: 80px;
+			text-align: center;
+			font-size: 5em;
+		}
+
+		p {
+			
+			font-size: 2em;
+		}
 	}
 
 	@media screen and (max-width: 960px) { 

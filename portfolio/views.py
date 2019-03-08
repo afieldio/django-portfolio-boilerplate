@@ -1,5 +1,4 @@
 import urllib
-import urllib2
 import os
 import json
 
@@ -30,8 +29,8 @@ def home(request):
                 'response': recaptcha_response
             }
             data = urllib.urlencode(values)
-            req = urllib2.Request(url, data)
-            response = urllib2.urlopen(req)
+            req = urllib.Request(url, data)
+            response = urllib.urlopen(req)
             result = json.load(response)
             ''' End reCAPTCHA validation '''
 
