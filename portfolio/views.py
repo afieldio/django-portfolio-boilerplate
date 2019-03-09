@@ -28,9 +28,9 @@ def home(request):
                 'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
                 'response': recaptcha_response
             }
-            data = urllib.urlencode(values)
-            req = urllib.Request(url, data)
-            response = urllib.urlopen(req)
+            data = urllib.parse.urlencode(values).encode("utf-8")
+            req = urllib.request.Request(url, data)
+            response = urllib.request.urlopen(req)
             result = json.load(response)
             ''' End reCAPTCHA validation '''
 
