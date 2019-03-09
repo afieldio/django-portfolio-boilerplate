@@ -6257,39 +6257,38 @@ section {
   display: flex;
   align-items: center; }
 
-.about-me {
+.the-demo {
   background-color: #3B7A9C;
   display: flex;
   align-items: center;
-  height: 100vh; }
-  .about-me .about-content iframe {
-    margin-left: 33%; }
-  .about-me .about-content .about-text {
-    margin: 0px 50px 40px 0px;
-    color: #f8f9fa; }
-  .about-me .about-content .about-text h3 {
-    padding-bottom: 20px;
-    font-size: 5em; }
-  .about-me .about-content .about-text p {
-    font-size: 2em; }
-  .about-me .about-content .about-text a {
-    color: #fe5f55; }
-  @media screen and (max-width: 960px) {
-    .about-me .about-content .about-text {
-      margin: 0px 20px 40px 20px; }
-    .about-me .about-content .about-text h3 {
-      text-align: center; } }
+  height: 100%; }
+  .the-demo .about-content {
+    padding: 150px 0px; }
+    .the-demo .about-content iframe {
+      display: block;
+      margin: 0px auto; }
+    .the-demo .about-content .about-text {
+      padding-bottom: 150px;
+      margin: 0px 50px 40px 0px;
+      color: #f8f9fa; }
+    .the-demo .about-content .about-text h3 {
+      padding-bottom: 20px;
+      font-size: 5em; }
+    .the-demo .about-content .about-text p {
+      font-size: 2em; }
+    .the-demo .about-content .about-text a {
+      color: #fe5f55; }
 
 @media screen and (max-width: 960px) {
-  .about-me {
+  .the-demo {
     height: 100%; }
-    .about-me .about-content iframe {
+    .the-demo .about-content iframe {
       margin: 0;
       padding: 0; } }
 
 .the-past {
   background-color: #fe5f55;
-  height: 100vh; }
+  height: 100%; }
   .the-past row {
     text-align: center; }
   .the-past .airplane-1 {
@@ -6304,9 +6303,19 @@ section {
       font-size: 5em; }
     .the-past .aviation-text p {
       font-size: 2em; }
-    .the-past .aviation-text .info {
+  .the-past .past-content {
+    padding: 150px 0px; }
+  .the-past .support-info {
+    padding-bottom: 150px;
+    width: 80%;
+    display: block;
+    margin: 0px auto; }
+    .the-past .support-info img {
+      padding-bottom: 20px; }
+    .the-past .support-info .info {
       text-align: center;
-      margin-top: 20px; }
+      color: #f8f9fa;
+      font-size: 2em; }
 
 @media screen and (max-width: 960px) {
   .the-past {
@@ -6330,13 +6339,15 @@ section {
 
 .the-student {
   background-color: #fe5f55;
-  height: 100vh; }
+  height: 100%; }
   .the-student row {
     text-align: center; }
   .the-student .airplane-1 {
     display: inline-block;
     margin: 40px auto;
     padding-top: 150px; }
+  .the-student .about-content {
+    padding-bottom: 150px; }
   .the-student .about-text {
     color: #f8f9fa; }
     .the-student .about-text h3 {
@@ -6357,125 +6368,43 @@ section {
     .the-student .student-text h3 {
       text-align: center; } }
 
-.the-pm {
-  background-color: #2c242e;
-  display: flex;
-  align-items: center; }
-  .the-pm .pm-content {
-    color: #F0E8DE;
-    text-align: justify; }
-    .the-pm .pm-content h3 {
-      padding-bottom: 20px; }
-  .the-pm .pm-img {
-    display: block;
-    width: 50%;
-    margin: 0px auto; }
-  @media screen and (max-width: 960px) {
-    .the-pm .pm-text {
-      margin: 0px 20px 40px 20px; }
-      .the-pm .pm-text h3 {
-        text-align: center; } }
-
-.the-awards {
-  background-color: #f8f8f8; }
-  .the-awards .awards-content {
-    width: 60%;
-    text-align: justify;
-    margin: 20px auto;
-    padding: 20px 0px 20px 0px;
-    color: #3B7A9C; }
-    .the-awards .awards-content h3 {
-      text-align: center;
-      padding-bottom: 20px; }
-    .the-awards .awards-content i {
-      padding: 0px 20px;
-      -webkit-animation: spin 8s linear infinite;
-      -moz-animation: spin 8s linear infinite;
-      animation: spin 8s linear infinite; }
-  @media screen and (max-width: 960px) {
-    .the-awards .awards-content {
-      width: 100%;
-      padding: 20px; }
-      .the-awards .awards-content h3 {
-        font-size: 1.2em; } }
-  .the-awards .card-container {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 40px; }
-  .the-awards .card {
-    border: 1px solid gray;
-    border-radius: 5px;
-    flex: 0 1 calc(50% - 1em);
-    background-color: #f8f8f8; }
-    .the-awards .card .card-link {
-      text-decoration: none;
-      color: #706F6F; }
-    .the-awards .card .card-content {
-      padding: 20px; }
-      .the-awards .card .card-content h4 {
-        border-bottom: 1px solid gray;
-        padding-bottom: 10px; }
-      .the-awards .card .card-content .award-list {
-        margin-top: 20px; }
-        .the-awards .card .card-content .award-list i {
-          padding-right: 20px; }
-      .the-awards .card .card-content .award-list a:last-child {
-        padding-bottom: 0px; }
-    .the-awards .card .card-img img {
-      width: 100%; }
-
-@media screen and (max-width: 960px) {
-  .the-awards .card {
-    flex: 0 0 calc(100% - 2em);
-    margin-bottom: 20px; }
-  .the-awards .card-container {
-    flex-direction: column; } }
-
-@-moz-keyframes spin {
-  100% {
-    -moz-transform: rotate(360deg); } }
-
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg); } }
-
-@keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-
 .contact-me {
   background-color: #f8f9fa; }
-  .contact-me .contact-content {
-    width: 60%;
+  .contact-me .contact {
+    width: 80%;
     text-align: justify;
     margin: 20px auto;
     padding: 20px 0px 20px 0px;
     color: #3B7A9C; }
-    .contact-me .contact-content h3 {
+    .contact-me .contact h3 {
       text-align: center;
-      padding-bottom: 20px; }
-    .contact-me .contact-content .download-resume {
+      padding-bottom: 20px;
+      font-size: 5em; }
+    .contact-me .contact p {
+      font-size: 2em; }
+    .contact-me .contact .download-pd {
       text-align: center;
       padding-top: 20px; }
-      .contact-me .contact-content .download-resume a {
+      .contact-me .contact .download-pd h4 {
+        font-size: 2em; }
+      .contact-me .contact .download-pd a {
         text-decoration: none;
         color: #3B7A9C; }
-      .contact-me .contact-content .download-resume a:hover {
+      .contact-me .contact .download-pd a:hover {
         color: #fe5f55;
         -webkit-transition: color 0.2s ease-out;
         -moz-transition: color 0.2s ease-out;
         -o-transition: color 0.2s ease-out;
         transition: color 0.2s ease-out; }
-  @media screen and (max-width: 960px) {
-    .contact-me .contact-content {
-      width: 100%;
-      padding: 20px 20px 0px 20px; } }
   .contact-me .form-container {
     float: none;
-    margin: 0px auto; }
+    margin: 0px auto;
+    width: 80%; }
+
+@media screen and (max-width: 960px) {
+  .contact-me .contact {
+    width: 100%;
+    padding: 20px 20px 0px 20px; } }
 
 label {
   font-weight: 100;
@@ -6569,6 +6498,8 @@ footer {
       -o-transition: color 0.2s ease-out;
       transition: color 0.2s ease-out; }
     footer .footer-info .footer-content {
+      color: #f8f9fa; }
+    footer .footer-info .footer-content-copy {
       color: #f8f9fa; }
 
 #background {
